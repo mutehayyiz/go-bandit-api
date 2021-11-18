@@ -71,6 +71,7 @@ Content-Type: application/json
     "updated_at": "2021-11-18T06:31:37.734063134Z",
     "url": "https://github.com/example/example",
     "status": "*",
+    "is_secure": false,
     "result": "*"
     "error": "*"
 }
