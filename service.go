@@ -54,7 +54,7 @@ func (d *DockerService) CreateContainer(path string) (string, error) {
 	resp, err := d.client.ContainerCreate(
 		d.ctx,
 		&container.Config{
-			WorkingDir: path,
+			WorkingDir: "/",
 			Image:      d.image,
 			Cmd:        d.cmd,
 			Tty:        true,
