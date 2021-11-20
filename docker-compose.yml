@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  go-bandit-api:
+    build: .
+    ports:
+      - 4242:4242
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock", "/tmp/src:/tmp/src"]
+    depends_on:
+      - redis
+    networks:
+      - gobanditapi
+
+  redis:
+    image: redis:5.0-alpine
+    ports:
+      - 6379:6379
+    networks:
+      - gobanditapi
+
+networks:
+  gobanditapi:
